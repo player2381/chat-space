@@ -2,23 +2,23 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false, foreign_key: true|
-|password|string|null: false, foreign_key: true|
-|nickname|string|null: false,|
-|group_id|integer|null: false, foreign_key: true|
+|email|string|null: false|
+|password|string|null: false, unique: true|
+|nickname|string|null: false, unique: true|
 ### Association
 - has_many :groups,  through:  :groups_users
+- has_many :groups_users
 - has_many :messages
+
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|name|string|null: false, foreign_key: true, unique: true|
 ### Association
 - has_many :messages
 - has_many :users,  through:  :groups_users
+- has_many :groups_users
 
 ## groups_usersテーブル
 |Column|Type|Options|
@@ -37,8 +37,8 @@
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- has_many :users
-- has_many :groups
+- belongs_to :user
+- belongs_to :group
 
 
 This README would normally document whatever steps are necessary to get the
