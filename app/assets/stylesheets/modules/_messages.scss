@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+.SideBar {
+  width: 300px;
+  background-color: #253141;
+}
+  .SideHeader {
+    height: 100px;
+    background-color: #2f3e51;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    &__box {
+      height: 20px;
+      width: 260px;
+      display: flex;
+      justify-content: space-between;
+    }
+    &__username {
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+    &__icon-list {
+      display: flex;
+      justify-content: end;
+    }
+    &__icon {
+      margin: 0 0 0 5px;
+      color: #ffffff;
+      font-size: 16px;
+      text-decoration: none;
+    }
+    
+  } 
+
+.Grouplist {
+  height:  calc(100vh - 100px);
+  background-color: #2f3e51;
+  padding: 0 20px;
+  color: #ffffff;
+}
+  .Side-group {
+    padding: 20px 0 40px;
+    box-sizing: border-box;
+    &__name {
+      font-size: 15px;
+    }
+    &__message {
+      font-size: 11px;
+      margin: 5px 0 0 0;
+    }
+  }
+
+.Chat {
+  width: calc(100vw - 300px);
+  background-color: #ffffff;
+}
+.MainHeader {
+  height: 100px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  display: flex;
+  padding: 0 40px;
+  align-items: center;
+  justify-content: space-between;
+  &__group-name {
+    font-size: 20px;
+    margin: 35px 0 0 0;
+    color: #333333;
+  }
+  &__member-list {
+    color: #999999;
+    font-size: 12px;
+    margin: 15px 0 0 0;
+    display: flex;
+  }
+  &__group-member {
+    padding: 0 5px 0 0;
+  }
+  &__edit-button {
+    height: 40px;
+    margin: 28px 0 0 0;
+    padding: 0 20px;
+    border: 1px solid #38AEF0;
+    color: #38AEF0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.Main-messages {
+  height: calc(100vh - 190px);
+  background-color: #fafafa;
+  padding: 35px 40px 0 0;
+  box-sizing: border-box;
+}
+  .Message-box {
+    margin: 0 0 0 46px;
+  }
+  .Message-info {
+    display: flex;
+    &__username {
+      color: #434a54;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    &__date {
+      font-size: 12px;
+      padding: 0 0 0 10px;
+      color: #999999;
+    }
+  }
+  .Massage {
+    margin: 12px 0 0 0;
+    &__content {
+      color: #434a54;
+      font-size: 14px;
+    }
+  }
+
+
+  .Footer {
+    height: 90px;
+    background-color: #d2d2d2;
+    padding: 20px 50px 20px 40px;
+    box-sizing: border-box
+  }
+
+.Main-form {
+  display: flex;
+  justify-content: space-between;
+  &__contents {
+    width: 100%;
+    background-color: #ffffff;
+    position: relative;
+  }
+  &__input-content {
+    height: 50px;
+    width: 100%;
+    padding: 0 45px 0 15px;
+  }
+  &__input-image {
+    height: 50px;
+    right: 10px;
+    top: 10px;
+    position: absolute;
+  } 
+  &__icon {
+    line-height: 50px;
+    font-size: 25px;
+  }
+  &__submit {
+    background-color: #38AEF0;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    height: 50px;
+    margin: 0 0 0 15px;
+    padding: 0 30px;
+  }
+  .Hidden {
+    display: none;
+  }
+}
