@@ -2,33 +2,27 @@
   .MainHeader
     .MainHeader__group
       .MainHeader__group-name
-        グループ名
+        = @group.name
         .MainHeader__member-list
-          Member
-          .MainHeader__group-member
-            ユーザー名
-    = link_to '#',class: "MainHeader__edit-button" do
-      Edit
- 
+          member:
+        .MainHeader__group-member
+          - @group.users.each do|user|
+            =user.name
+    .MainHeader__edit-button
+      = link_to edit_group_path(@group) do
+        Edit
 
   .Main-messages
-    .Message-box
-      .Message-info
-        .Message-info__username
-          ユーザー名
-        .Message-info__date
-          2020/2/2 12:22
-      .Massage
-        .Massage__content
-          内容
+    = render @messages
+    
   .Footer
-    %form.Main-form
+    = form_with model: [@group, @message], html: {class: "Main-form"}, local: true do |f|
       .Main-form__contents
-        %input.Main-form__input-content{type: 'text', placeholder: 'type a message'}
-        %label.Main-form__input-image
+        = f.text_field :content, class: 'Main-form__input-content', placeholder: 'type a message'
+        = f.label :image, class: 'Main-form__input-image' do
           = icon('fas', 'image', class: 'Main-form__icon')
-          %input.Hidden{type: "file"}
-      %input.Main-form__submit{type: 'submit', value: 'Send'}
+          = f.file_field :image, class: 'Hidden'
+      =f.submit 'Send', class: 'Main-form__submit'
 
       
       
