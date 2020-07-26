@@ -11,35 +11,35 @@
   width: 300px;
   background-color: #253141;
 }
-  .SideHeader {
-    height: 100px;
-    background-color: #2f3e51;
-    padding: 0 20px;
+.SideHeader {
+  height: 100px;
+  background-color: #2f3e51;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  &__box {
+    height: 20px;
+    width: 260px;
     display: flex;
-    align-items: center;
-    &__box {
-      height: 20px;
-      width: 260px;
-      display: flex;
-      justify-content: space-between;
-    }
-    &__username {
-      font-size: 16px;
-      font-weight: bold;
+    justify-content: space-between;
+  }
+  &__username {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  &__icon-list {
+    display: flex;
+    justify-content: end;
+  }
+  &__icon {
+    margin: 0 0 0 5px;
+    a {
       color: #ffffff;
+      font-size: 16px;
     }
-    &__icon-list {
-      display: flex;
-      justify-content: end;
-    }
-    &__icon {
-      margin: 0 0 0 5px;
-      a {
-        color: #ffffff;
-        font-size: 16px;
-      }
-    }
-  } 
+  }
+} 
 
 .Grouplist {
   height:  calc(100vh - 100px);
@@ -47,17 +47,22 @@
   padding: 0 20px;
   color: #ffffff;
 }
-  .Side-group {
-    padding: 20px 0 40px;
-    box-sizing: border-box;
-    &__name {
-      font-size: 15px;
-    }
-    &__message {
-      font-size: 11px;
-      margin: 5px 0 0 0;
-    }
+.Side-group {
+  padding: 20px 0 40px;
+  box-sizing: border-box;
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
   }
+  &__name {
+    font-size: 15px;
+  }
+  &__message {
+    font-size: 11px;
+    margin: 5px 0 0 0;
+  }
+}
 
 .Chat {
   width: calc(100vw - 300px);
@@ -65,35 +70,35 @@
 }
 .MainHeader {
   height: 100px;
-  background-color: #ffffff;
+  padding: 0 40px;
   border-bottom: 1px solid #eeeeee;
   display: flex;
-  padding: 0 40px;
-  align-items: center;
   justify-content: space-between;
   &__group-name {
     font-size: 20px;
     margin: 35px 0 0 0;
     color: #333333;
   }
-  &__member-list {
+  &__member-list{
     color: #999999;
     font-size: 12px;
     margin: 15px 0 0 0;
     display: flex;
   }
-  &__group-member {
+  &__member {
     padding: 0 5px 0 0;
   }
   &__edit-button {
     height: 40px;
     margin: 28px 0 0 0;
     padding: 0 20px;
-    border: 1px solid #38AEF0;
-    color: #38AEF0;
+    border: 1px solid #38aef0;
     text-decoration: none;
     display: flex;
     align-items: center;
+    a {
+      color: #38aef0;
+    }
   }
 }
 
