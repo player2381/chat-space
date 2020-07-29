@@ -1,11 +1,11 @@
-$(function() {
-  function buildHTML(message) {
+$(function(){
+  function buildHTML(message){
     if ( message.image ) {
       let html =
-        `<div class="Message-box">
+        `<div class="Message-box" data-message-id=${message.id}>
           <div class="Message-info">
             <div class="Message-info__username">
-              ${message.username}
+              ${message.user_name}
             </div>
             <div class="Message-info__date">
               ${message.created_at}
@@ -21,10 +21,10 @@ $(function() {
       return html;
     } else {
       let html =
-      `<div class="Message-box">
+      `<div class="Message-box" data-message-id=${message.id}>
         <div class="Message-info">
           <div class="Message-info__username">
-            ${message.username}
+            ${message.user_name}
           </div>
           <div class="Message-info__date">
             ${message.created_at}
@@ -36,11 +36,11 @@ $(function() {
           </p>
         </div>
       </div>`
-    return html;
+      return html;
     };
   }
 
-  $('.Main-form').on('submit', function(e) {
+  $('.Main-form').on('submit', function(e){
     e.preventDefault();
     let formData = new FormData(this);
     let url = $(this).attr('action');
@@ -52,16 +52,22 @@ $(function() {
       processData: false,
       contentType: false
     })
-    .done(function(data){ 
-      let html =buildHTML(data);
-      $('.Main-messages').append(html);
+    .done(function(data){
+      let html = buildHTML(data);
+      $('.Main-messages').append(html);      
+      $('.Main-form')[0].reset();
       $('.Main-messages').animate({ scrollTop: $('.Main-messages')[0].scrollHeight});
-      $('Main-form__submit').removeAttr('data-disable-with');
-      $('form')[0].reset();
-      $('.Main-form__submit').prop('disabled', false);
+      $('.Main-form__submit').prop("disabled", false);
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
+      $('.Main-form__submit').prop("disabled", false);
     });
   });
 });
+
+
+
+
+
+

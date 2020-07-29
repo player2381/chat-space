@@ -31,15 +31,15 @@
   &__icon-list {
     display: flex;
     justify-content: end;
+    color: #ffffff;
   }
   &__icon {
     margin: 0 0 0 5px;
-    a {
-      color: #ffffff;
-      font-size: 16px;
-    }
+    color: #ffffff;
+    font-size: 16px;
   }
-} 
+}
+ 
 
 .Grouplist {
   height:  calc(100vh - 100px);
